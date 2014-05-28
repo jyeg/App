@@ -1,0 +1,24 @@
+<ion-view title="Songs">
+  <ion-content class="has-header">
+    
+<!--     <ion-list>
+      <ion-item ng-repeat="song in songs" type="item-text-wrap">
+        {{song.first_name}}
+      </ion-item>
+    </ion-list> -->
+	
+	<div class="list">
+      <a class="item my-item"
+        collection-repeat="item in getContacts()"
+        collection-item-height="getItemHeight(item)"
+        collection-item-width="getItemWidth(item)"
+        ng-href="#/tab/song/{{item.id}}"
+
+        ng-style="{'line-height': getItemHeight(item) + 'px'}"
+        ng-class="{'item-divider': item.isLetter}">
+        <img ng-if="!item.isLetter" ng-src="http://placekitten.com/60/{{55 + ($index % 10)}}">
+        {{item.letter || (item.first_name+' '+item.last_name)}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view title="Music">
+  <ion-content class="has-header">
+    
+<!--     <ion-list>
+      <ion-item ng-repeat="song in songs" type="item-text-wrap">
+        {{song.first_name}}
+      </ion-item>
+    </ion-list> -->
+	
+	<div class="list">
+      <a class="item my-item"
+        collection-repeat="item in getMusicList()"
+        collection-item-height="getItemHeight(item)"
+        collection-item-width="getItemWidth(item)"
+        ng-href="#/tab/song/{{item.id}}"
+
+        ng-style="{'line-height': getItemHeight(item) + 'px'}"
+        ng-class="{'item-divider': item.isLetter}">
+        <img ng-if="!item.isLetter" ng-src="{{item.img_url}}">
+        {{item.letter || (item.title)}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
+
+<!--     <h2 class="g_hdr">All Songs</h2>
+    <ul class='songlist'>
+      {{#songs}}
+      <li>
+        <a href='{{web_url}}'>
+          <h2>{{title}}</h2>
+          <p>{{artist}} <span style='color:#ccc;'>({{year}})</span></p>
+        </a>
+      </li>
+      {{/songs}}
+    </ul> -->
