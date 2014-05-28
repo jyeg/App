@@ -12,12 +12,13 @@
         collection-repeat="item in getMusicList()"
         collection-item-height="getItemHeight(item)"
         collection-item-width="getItemWidth(item)"
-        ng-href="#/tab/song/{{item.id}}"
+        ng-href="#/tab/music/{{item.title}}"
 
         ng-style="{'line-height': getItemHeight(item) + 'px'}"
         ng-class="{'item-divider': item.isLetter}">
         <img ng-if="!item.isLetter" ng-src="{{item.img_url}}">
         {{item.letter || (item.title)}}
+                          {{item.Artist}}
       </a>
     </div>
   </ion-content>

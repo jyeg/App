@@ -69,13 +69,13 @@ angular.module('starter.controllers', [])
 
 
   
-  alert(music7);
+  //alert(music7);
 
   //var music1 = MusicService.all();
   //window.CONTACTS is defined below
   music7
   	.sort(function(a, b) {
-      return a.artist > b.artist ? 1 : -1;
+      return a.title > b.title ? 1 : -1;
     })
     .forEach(function(person) {
       //Get the first letter of the last name, and if the last name changes
@@ -131,7 +131,7 @@ angular.module('starter.controllers', [])
 
       //Mark this person's last name letter as 'has a match'
       if (!item.isLetter && itemDoesMatch) {
-        var letter = item.artist.charAt(0).toUpperCase();
+        var letter = item.title.charAt(0).toUpperCase();
         letterHasMatch[letter] = true;
       }
 
